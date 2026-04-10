@@ -186,6 +186,7 @@ padding: 15px;
 
 .competences table tbody td {
     border-bottom: 1px solid var(--gris-clair);
+    color: var(--gris-tres-fonce);
 }
 
 .competences table tbody tr:nth-child(even) {
