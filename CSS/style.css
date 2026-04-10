@@ -279,20 +279,24 @@ nav a:hover {
 }
          
 section h2 { 
+    text-decoration: none;
     padding-top: 3%; 
     color: var(--violet-doux); 
-    font-size: 1.6rem; 
+    font-size: 1.8rem; 
     font-weight: 700; 
     position: relative; 
     text-align: center; 
 } 
  
-.underline { 
-    width: 60px; 
-    height: 3px; 
-    background: var(--primary-color); 
-    margin: 1.1rem auto; 
-} 
+section h2::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 1.2rem auto;
+    border-radius: 2px;
+}
  
 .projects-grid { 
     display: grid; 
@@ -505,4 +509,258 @@ background-color: var(--violet-fonce);
 .contact-content { 
 flex-direction: column; 
 } 
+}
+/* Import d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f3f3; /* Bleu nuit pro */
+    color: #ffffff;
+}
+
+.passion-bento {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px; /* Un peu plus large pour la grid */
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+/* --- Bento Grid Structure --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de base */
+    gap: 30px;
+}
+
+/* --- Base Style for Bento Items --- */
+.bento-item {
+    background: #1e293b;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden; /* Important pour le zoom de l'image */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet d'animation doux */
+    position: relative;
+    display: flex;
+    text-align: left;
+}
+
+.bento-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Item Variations (Mise en page) --- */
+
+/* Horizontal: Image à gauche, Texte à droite */
+.item-row {
+    grid-column: span 2; /* Prend 2 colonnes */
+}
+
+/* Vertical: Image en haut, Texte en bas */
+.item-col {
+    flex-direction: column;
+}
+
+/* --- Image Containers & Styling --- */
+.bento-image-container {
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+/* Pour les éléments verticaux, fixons la hauteur de l'image */
+.item-col .bento-image-container {
+    height: 200px;
+    width: 100%;
+}
+
+.bento-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image remplit l'espace sans déformation */
+    transition: transform 0.6s ease;
+}
+
+.bento-item:hover .bento-image {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+/* --- Content Styling --- */
+.bento-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bento-item h3 {
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.bento-item p {
+    color: #94a3b8;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- Petits détails : Icônes bulles --- */
+.icon-bubble {
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+    }
+    
+    .item-row {
+        grid-column: span 1; /* Les éléments larges redeviennent normaux */
+        flex-direction: column; /* L'image repasse au-dessus du texte */
+    }
+
+    .item-row .bento-image-container {
+        height: 200px;
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SECTION DIVERTISSEMENTS - THÈME SUNSET
+   ========================================= */
+
+.entertainment {
+    padding: 80px 20px;
+    background-color: #fdfbff; /* Un blanc très légèrement teinté de violet */
+    border-radius: 30px;
+    margin: 20px 0;
+}
+
+/* TITRE & SOULIGNEMENT */
+.entertainment .section-title {
+    color: #2d1b4e; /* Violet très sombre */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.entertainment .underline {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #a78bfa, #fb923c); /* Dégradé violet/orange */
+    margin: 0 auto 50px auto;
+    border-radius: 2px;
+}
+
+/* GRILLE : 2 en haut, 2 en bas */
+.entertainment-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* CHAQUE CASE (Style Doux Sunset) */
+.entertainment-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 20px;
+    
+    /* Fond : Dégradé très léger Violet doux vers Orange doux */
+    background: linear-gradient(
+        135deg, 
+        rgba(167, 139, 250, 0.12), /* Violet doux */
+        rgba(251, 146, 60, 0.12)   /* Orange doux */
+    );
+    
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* TEXTE */
+.entertainment-card h3 {
+    color: #4c1d95; /* Violet foncé */
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.entertainment-card p {
+    color: #5b4b70; /* Gris-violet pour la douceur */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ICONES (Violet Doux) */
+.entertainment-card i {
+    font-size: 2.2rem;
+    color: #8b5cf6; /* Violet principal */
+    min-width: 55px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+/* EFFET AU SURVOL */
+.entertainment-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(
+        135deg, 
+        rgba(167, 139, 250, 0.2), 
+        rgba(251, 146, 60, 0.2)
+    );
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.1);
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+/* L'icône change vers l'orange au survol */
+.entertainment-card:hover i {
+    color: #f97316; /* Orange vif */
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .entertainment-list {
+        grid-template-columns: 1fr;
+    }
 }
